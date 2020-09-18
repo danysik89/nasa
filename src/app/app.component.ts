@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nasa-app';
+  apiKey = 'KDOO4Edhzs3Y3l2beMGuiyASkKy39Ta3jJrzIvAI';
 }
