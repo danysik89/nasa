@@ -1,2 +1,42 @@
-first
-<router-outlet></router-outlet>
+<mat-toolbar>
+  <span>Nasa App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="app">
+  <h1>Welcome to NASA photo-finder</h1>
+  <p>Please select options below to begin</p>
+
+  <div class="app-container">
+    <div class="controls">
+      <mat-form-field appearance="fill">
+        <mat-label>Rover</mat-label>
+        <mat-select>
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Camera</mat-label>
+        <mat-select>
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Number</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="searchFotos()">Search</button>
+    </div>
+
+    <mat-grid-list class="photos-list" [cols]="breakpoint" rowHeight="2:1" (window:resize)="onResize($event)">
+      <mat-grid-tile *ngFor="let photo of photosToDisplay">
+          <img class="list-item" src="{{photo.img_src}}" alt="NASA photo">
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <button [disabled]="photosToDisplay.length === photos.length" mat-raised-button color="primary" (click)="loadMore()">Load more</button>
+  </div>
+</div>
