@@ -30,7 +30,7 @@ export class AppComponent implements OnInit{
   ];
 
   testConflict = {
-    value: 'feature'
+    value: 'feature and master'
   };
 
   public form: FormGroup;
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit{
         .catch(err => {
           console.log(err);
           this.errorText = err.statusText;
-          this.loadingStatus = true;
+          this.loadingStatus = false;
       });
 
       this.searchFlag = true;
@@ -78,7 +78,7 @@ export class AppComponent implements OnInit{
 
   loadMore(): void {
     const counter = this.photosToDisplay.length;
-    this.photosToDisplay.push(...this.photos.slice(counter, counter + 15));
+    this.photosToDisplay.push(...this.photos.slice(counter, counter + 12));
     console.log(this.photosToDisplay);
   }
 }
