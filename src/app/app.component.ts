@@ -22,8 +22,9 @@ export class AppComponent implements OnInit{
     { value: 'spirit', label: 'Spirit' },
   ];
 
+
   cameraOptions = [
-    { value: 'FHAZ', label: 'Front Hazard Avoidance Camera' },
+    { value: 'CHICK', label: 'Front Hazard Avoidance Camera' },
     { value: 'RHAZ', label: 'Rear Hazard Avoidance Camera' },
     { value: 'MAST', label: 'Mast Camera' },
     { value: 'CHEMCAM', label: 'Chemistry and Camera Complex' },
@@ -56,7 +57,7 @@ export class AppComponent implements OnInit{
     const {rover, camera, sol} = this.form.value;
     if (this.form.valid) {
       this.loadingStatus = true;
-      this.appService.getFotos(rover, camera, sol)
+      this.appService.getPhotos(rover, camera, sol)
         .then((resp: any) => {
           this.errorText = '';
           console.log(resp);

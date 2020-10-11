@@ -11,7 +11,8 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  // tslint:disable-next-line: typedef
+  // new comment
+  // tslint:disable-next-line:typedef
   getPhotos(rover, camera, sol) {
     return this.http.get(`${this.API}${rover}/photos?sol=${sol}&camera=${camera}&api_key=${this.API_KEY}`).toPromise();
   }
