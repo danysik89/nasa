@@ -51,12 +51,12 @@ export class AppComponent implements OnInit{
     this.breakpoint = (event.target.innerWidth <= 750) ? 2 : 4;
   }
 
-  searchFotos(): any {
+  searchPhotos(): any {
     console.log('form', this.form.value);
     const {rover, camera, sol} = this.form.value;
     if (this.form.valid) {
       this.loadingStatus = true;
-      this.appService.getFotos(rover, camera, sol)
+      this.appService.getPhotos(rover, camera, sol)
         .then((resp: any) => {
           this.errorText = '';
           console.log(resp);
