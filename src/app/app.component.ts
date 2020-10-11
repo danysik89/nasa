@@ -33,6 +33,10 @@ export class AppComponent implements OnInit{
     { value: 'MINITES', label: 'Miniature Thermal Emission Spectrometer (Mini-TES)' }
   ];
 
+  testConflict = {
+    value: 'master'
+  };
+
   public form: FormGroup;
 
   constructor(private appService: AppService, public fb: FormBuilder) {
