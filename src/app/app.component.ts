@@ -24,14 +24,10 @@ export class AppComponent implements OnInit{
 
 
   cameraOptions = [
-    { value: 'CHICK', label: 'Front Hazard Avoidance Camera' },
-    { value: 'RHAZ', label: 'Rear Hazard Avoidance Camera' },
-    { value: 'MAST', label: 'Mast Camera' },
-    { value: 'CHEMCAM', label: 'Chemistry and Camera Complex' },
-    { value: 'MAHLI', label: 'Mars Hand Lens Imager' },
     { value: 'MARDI', label: 'Mars Descent Imager' },
     { value: 'NAVCAM', label: 'Navigation Camera' },
-    { value: 'MINITES', label: 'Miniature Thermal Emission Spectrometer (Mini-TES)' }
+    { value: 'MINITES', label: 'Miniature Thermal Emission Spectrometer (Mini-TES)' },
+    { value: 'NEW', label: 'New one' }
   ];
 
   public form: FormGroup;
@@ -69,7 +65,7 @@ export class AppComponent implements OnInit{
         .catch(err => {
           console.log(err);
           this.errorText = err.statusText;
-          this.loadingStatus = false;
+          this.loadingStatus = true;
       });
 
       this.searchFlag = true;
@@ -79,7 +75,7 @@ export class AppComponent implements OnInit{
 
   loadMore(): void {
     const counter = this.photosToDisplay.length;
-    this.photosToDisplay.push(...this.photos.slice(counter, counter + 12));
+    this.photosToDisplay.push(...this.photos.slice(counter, counter + 15));
     console.log(this.photosToDisplay);
   }
 }
