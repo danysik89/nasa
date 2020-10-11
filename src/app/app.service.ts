@@ -12,7 +12,7 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line: typedef
-  getFotos(rover, camera, sol) {
+  getPhotos(rover, camera, sol) {
     return this.http.get(`${this.API}${rover}/photos?sol=${sol}&camera=${camera}&api_key=${this.API_KEY}`).toPromise();
   }
 
