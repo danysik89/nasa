@@ -48,7 +48,7 @@ export class AppComponent implements OnInit{
     this.breakpoint = (event.target.innerWidth <= 750) ? 2 : 4;
   }
 
-  searchFotos(): any {
+  searchPhotos(): any {
     console.log('form', this.form.value);
     const {rover, camera, sol} = this.form.value;
     if (this.form.valid) {
