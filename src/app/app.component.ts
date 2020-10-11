@@ -22,13 +22,16 @@ export class AppComponent implements OnInit{
     { value: 'spirit', label: 'Spirit' },
   ];
 
-
   cameraOptions = [
     { value: 'MARDI', label: 'Mars Descent Imager' },
     { value: 'NAVCAM', label: 'Navigation Camera' },
     { value: 'MINITES', label: 'Miniature Thermal Emission Spectrometer (Mini-TES)' },
     { value: 'NEW', label: 'New one' }
   ];
+
+  testConflict = {
+    value: 'feature'
+  };
 
   public form: FormGroup;
 
